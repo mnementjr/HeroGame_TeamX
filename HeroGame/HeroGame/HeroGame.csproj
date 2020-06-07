@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="D:\Lexus\GitHub Projects\HeroGame_TeamX\HeroGame.cs" Link="HeroGame.cs" />
+  </ItemGroup>
+
+</Project>
