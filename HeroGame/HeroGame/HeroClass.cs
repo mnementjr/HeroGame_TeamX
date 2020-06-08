@@ -44,12 +44,47 @@ namespace HeroGame
             // Switch race and proffession to characters
             if (race.Equals(RaceType.Elf))
             {
+                MAX_HEALTH = 180;
                 Intelligence += 10;
                 Strength -= 4;
+                Agility += 7;
+                Endurance -= 5;
+                CurrentHealth = 90;
+                CurrentMana = 90;
+                CurrentStamina = 100;
             }
             else if (race.Equals(RaceType.Human))
             {
-                // .......
+                MAX_HEALTH = 200;
+                Intelligence += 9;
+                Strength += 5;
+                Agility -= 1;
+                Endurance += 6;
+                CurrentHealth = 100;
+                CurrentMana = 60;
+                CurrentStamina = 120;
+            }
+            else if (race.Equals(RaceType.Dwarf))
+            {
+                MAX_HEALTH = 195;
+                Intelligence += 4;
+                Strength += 7;
+                Agility -= 3;
+                Endurance += 15;
+                CurrentHealth = 100;
+                CurrentMana = 70;
+                CurrentStamina = 200;
+            }
+            else if (race.Equals(RaceType.Orc))
+            {
+                MAX_HEALTH = 250;
+                Intelligence -= 5;
+                Strength += 11;
+                Agility -= 5;
+                Endurance += 7;
+                CurrentHealth = 150;
+                CurrentMana = 60;
+                CurrentStamina = 150;
             }
         }
         public void DecreaseHealth(double amountHealth)
