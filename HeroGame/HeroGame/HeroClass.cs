@@ -1,8 +1,8 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ConsoleApp2
+namespace HeroGame
 {
    
     class HeroClass
@@ -13,9 +13,9 @@ namespace ConsoleApp2
         public enum ProffesionType { Warrior, Archer, Mage }
         public class Hero
         {
-            public const double MAX_STAMINA = 100;
-            public readonly double MAX_HEALTH = 100;
-            public readonly double MAX_MANA = 100;
+            public double MAX_STAMINA = 100;
+            public readonly double MAX_HEALTH;
+            public double MAX_MANA = 100;
             public string Name { set; get; }
             public double CurrentHealth { set; get; }       
             public double CurrentStamina { set; get; } 
@@ -24,10 +24,29 @@ namespace ConsoleApp2
             public WeaponType Weapon { set; get; }
             public RaceType Race { set; get; }
             public ProffesionType Proffesion { set; get; }
-            // public Character character { set; get; }
-            // public Proffesion proffesion { set; get; }
+            public double Strength { get; set; }
+            public double Agility { get; set; }
+            public double Intelligence { get; set; }
+            public double Endurance { get; set; }
+            public Inventory Inventory { get; set; }
 
-                   
+            public Hero(string name, RaceType race, ProffesionType proffesion, double maxHealth)
+            {
+                this.Name = name;
+                this.Race = race;
+                this.Proffesion = proffesion;
+                MAX_HEALTH = maxHealth;
+                Strength = 10;
+                Agility = 10;
+                Intelligence = 10;
+                Endurance = 10;
+                CurrentHealth = MAX_HEALTH;
+                CurrentMana = MAX_MANA;
+                CurrentStamina = MAX_STAMINA;
+                // Switch race and proffession to characters
+            }
+            
+
             public void DecreaseHealth(double amountHealth)
             {
                 if (CurrentHealth - amountHealth > 0)   // 1000 - 2000 = -1000
