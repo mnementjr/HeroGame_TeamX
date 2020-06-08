@@ -6,6 +6,6 @@ namespace HeroGame
 {
     public enum TypeOfDamage
     {
-        MagicDamage, PhysicalDamage, ShotDamage 
+        MagicDamage, PhysicalDamage, ShotDamage
     }
 }

@@ -6,6 +6,6 @@ namespace HeroGame
 {
     interface IWarrior
     {
-        void InflictPhysicalDamage();
+        void InflictPhysicalDamage(Hero anotherHero);
     }
 }

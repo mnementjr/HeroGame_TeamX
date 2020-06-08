@@ -6,7 +6,7 @@ namespace HeroGame
 {
     interface IWizard
     {
-        void InflictMagicDamage();
+        void InflictMagicDamage(Hero anotherHero);
         void UseSpell();
     }
 }

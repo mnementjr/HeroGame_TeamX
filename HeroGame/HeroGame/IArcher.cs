@@ -6,6 +6,6 @@ namespace HeroGame
 {
     interface IArcher
     {
-        void InflictShotDamage();
+        void InflictShotDamage(Hero anotherHero);
     }
 }

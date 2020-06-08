@@ -4,8 +4,6 @@ using System.Text;
 
 namespace HeroGame
 {
-    public enum Rarity { common, rare, epic, legendary }
-    public enum WeaponType { pike, halberg, sword, axe, blunt }
 
     public class Item
     {
