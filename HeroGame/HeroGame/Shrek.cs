@@ -4,7 +4,7 @@ using System.Text;
 
 namespace HeroGame
 {
-    public class Shrek : Hero, IArcher
+    public class Shrek : Hero
     {
         public double Damage { private set; get; }
         public Shrek() : base("Шрек", RaceType.Orc, ProffesionType.Archer, 2000)
