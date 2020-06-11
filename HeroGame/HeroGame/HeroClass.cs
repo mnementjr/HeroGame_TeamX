@@ -25,6 +25,7 @@ namespace HeroGame
         public double Agility { get; set; }
         public double Intelligence { get; set; }
         public double Endurance { get; set; }
+        public double BasedDamage { get; set; }
         public Inventory Inventory { get; set; }
 
         public Hero(string name, RaceType race, ProffesionType proffesion, double maxHealth)
@@ -37,6 +38,7 @@ namespace HeroGame
             Agility = 10;
             Intelligence = 10;
             Endurance = 10;
+            BasedDamage = 100;
             IsAlive = true;
 
             ChooseRace(race);
@@ -48,10 +50,37 @@ namespace HeroGame
         }
         public void InflictDamage(Hero anotherHero)
         {
-            double damage = Inventory.GetDamage();
+            double damage = Inventory.GetDamage() + this.BasedDamage;
             damage += Strength + damage;
+            if (this.CurrentStamina <= 0)
+            {
+                damage /= 2;
+            }
             damage -= anotherHero.Inventory.GetDefence();
+            this.CurrentStamina -= 10;
+            if (this.CurrentStamina < 0)
+            {
+                this.CurrentStamina = 0;
+            }
             anotherHero.DecreaseHealth(damage);
+        }
+        public void InflictMagicDamage(Hero anotherHero)
+        {
+            if (this.Proffesion == ProffesionType.Mage)
+            {
+                double damage = Inventory.GetDamage() + this.BasedDamage;
+                damage += Intelligence + damage;
+                if (this.CurrentMana <= 0)
+                {
+                    damage /= 2;
+                }
+                this.CurrentMana -= 10;
+                if (this.CurrentMana < 0)
+                {
+                    this.CurrentMana = 0;
+                }
+                anotherHero.DecreaseHealth(damage);
+            }
         }
         public void DecreaseHealth(double amountHealth)
         {
@@ -159,6 +188,7 @@ namespace HeroGame
                 Strength += 11;
                 Agility -= 5;
                 Endurance += 7;
+                BasedDamage += 50;
             }
         }
         private void ChooseProffesion(ProffesionType type)
