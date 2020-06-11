@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,14 +6,15 @@ namespace HeroGame
 {
     public class Shrek : Hero
     {
-        public double Damage { private set; get; }
-        public Shrek() : base("Шрек", RaceType.Orc, ProffesionType.Archer, 2000)
+        public Shrek() : base("Шрек", RaceType.Orc, ProffesionType.Warrior, 2000)
         {
-            Damage = 100;
+            
         }
-        public void InflictShotDamage(Hero anotherHero)
+        public string Print()
         {
-            anotherHero.DecreaseHealth(Damage * Strength);
+            return "\nName " + this.Name + "\nRace " + this.Race + "\nProffesion " + this.Proffesion + "\nCurrent Health " + this.CurrentHealth +
+                "\nCurrent Stamina " + this.CurrentStamina + "\nCurrent Mana " + this.CurrentMana + "\nStrength " + this.Strength +
+                "\nAgility " + this.Agility + "\nDamage " + this.BasedDamage + "\n";
         }
     }
 }
