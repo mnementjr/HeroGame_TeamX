@@ -6,7 +6,6 @@ namespace HeroGame
 {
     public enum WeaponType { Pike, Palberg, TwoHandedAxe, Sword, Axe, Bow, Blunt, Crossbow, MagicWand }
     public enum RaceType { Elf, Orc, Human, Dwarf }
-    public enum Rarity { Common, Rare, Epic, Legendary }
     public enum ProffesionType { Warrior, Archer, Mage }
 
     public abstract class Hero
@@ -196,27 +195,27 @@ namespace HeroGame
             Inventory = new Inventory();
             if (type.Equals(ProffesionType.Archer))
             {
-                Inventory.helmet = new Armor("Archer's helmet", Rarity.Common, 100, 10, 0);
-                Inventory.chesplate = new Armor("Archer's chestplate", Rarity.Common, 100, 10, 0);
-                Inventory.leggings = new Armor("Archer's leggings", Rarity.Common, 100, 10, 0);
-                Inventory.boots = new Armor("Archer's boots", Rarity.Common, 100, 10, 0);
-                Inventory.oneHand = new Weapon("Archer's bow", Rarity.Common, 100, 50, WeaponType.Bow, 0);
+                Inventory.helmet = new Armor("Archer's helmet", 100, 10, 0);
+                Inventory.chesplate = new Armor("Archer's chestplate", 100, 10, 0);
+                Inventory.leggings = new Armor("Archer's leggings", 100, 10, 0);
+                Inventory.boots = new Armor("Archer's boots", 100, 10, 0);
+                Inventory.oneHand = new Weapon("Archer's bow", 100, 50, WeaponType.Bow, 0);
             }
             else if (type.Equals(ProffesionType.Mage))
             {
-                Inventory.helmet = new Armor("Mage's helmet", Rarity.Common, 100, 15, 0);
-                Inventory.chesplate = new Armor("Mage's chestplate", Rarity.Common, 100, 15, 0);
-                Inventory.leggings = new Armor("Mage's leggings", Rarity.Common, 100, 15, 0);
-                Inventory.boots = new Armor("Mage's boots", Rarity.Common, 100, 15, 0);
-                Inventory.oneHand = new Weapon("Mage's magic wand", Rarity.Common, 100, 70, WeaponType.MagicWand, 0);
+                Inventory.helmet = new Armor("Mage's helmet", 100, 15, 0);
+                Inventory.chesplate = new Armor("Mage's chestplate", 100, 15, 0);
+                Inventory.leggings = new Armor("Mage's leggings", 100, 15, 0);
+                Inventory.boots = new Armor("Mage's boots", 100, 15, 0);
+                Inventory.oneHand = new Weapon("Mage's magic wand", 100, 70, WeaponType.MagicWand, 0);
             }
             else if (type.Equals(ProffesionType.Warrior))
             {
-                Inventory.helmet = new Armor("Warrior's helmet", Rarity.Common, 150, 20, 0);
-                Inventory.chesplate = new Armor("Warrior's chestplate", Rarity.Common, 150, 20, 0);
-                Inventory.leggings = new Armor("Warrior's leggings", Rarity.Common, 150, 20, 0);
-                Inventory.boots = new Armor("Warrior's boots", Rarity.Common, 150, 20, 0);
-                Inventory.oneHand = new Weapon("Warrior's sword", Rarity.Common, 150, 200, WeaponType.Sword, 0);
+                Inventory.helmet = new Armor("Warrior's helmet", 150, 20, 0);
+                Inventory.chesplate = new Armor("Warrior's chestplate", 150, 20, 0);
+                Inventory.leggings = new Armor("Warrior's leggings", 150, 20, 0);
+                Inventory.boots = new Armor("Warrior's boots", 150, 20, 0);
+                Inventory.oneHand = new Weapon("Warrior's sword", 150, 200, WeaponType.Sword, 0);
             }
         }
     }

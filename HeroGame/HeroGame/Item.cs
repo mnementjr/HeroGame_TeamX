@@ -14,7 +14,6 @@ namespace HeroGame
 
     public class Equipment : Item
     {
-        public Rarity equipmentRarity;
         public double equipmentDurability;
     }
 
@@ -22,10 +21,9 @@ namespace HeroGame
     {
         public double Damage;
         public WeaponType weaponType;
-        public Weapon(string name, Rarity rarity, double durablity, double damage, WeaponType weaponType, double cost)
+        public Weapon(string name, double durablity, double damage, WeaponType weaponType, double cost)
         {
             this.name = name;
-            equipmentRarity = rarity;
             equipmentDurability = durablity;
             Damage = damage;
             this.weaponType = weaponType;
@@ -36,10 +34,9 @@ namespace HeroGame
     public class Armor : Equipment
     {
         public double Defence;
-        public Armor(string name, Rarity rarity, double durablity, double defence, double cost)
+        public Armor(string name, double durablity, double defence, double cost)
         {
             this.name = name;
-            equipmentRarity = rarity;
             equipmentDurability = durablity;
             Defence = defence;
             itemCost = cost;
