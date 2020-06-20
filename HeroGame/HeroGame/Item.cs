@@ -11,12 +11,10 @@ namespace HeroGame
         public string name;
         public double itemCost;
     }
-
     public class Equipment : Item
     {
         public double equipmentDurability;
     }
-
     public class Weapon : Equipment
     {
         public double Damage;
@@ -30,7 +28,6 @@ namespace HeroGame
             itemCost = cost;
         }
     }
-
     public class Armor : Equipment
     {
         public double Defence;
@@ -42,7 +39,6 @@ namespace HeroGame
             itemCost = cost;
         }
     }
-
     public class Inventory
     {
         public Armor helmet;

@@ -7,7 +7,6 @@ namespace HeroGame
     public enum WeaponType { Pike, Palberg, TwoHandedAxe, Sword, Axe, Bow, Blunt, Crossbow, MagicWand }
     public enum RaceType { Elf, Orc, Human, Dwarf }
     public enum ProffesionType { Warrior, Archer, Mage }
-
     public abstract class Hero
     {
         public double MAX_STAMINA = 100;
@@ -26,7 +25,6 @@ namespace HeroGame
         public double Endurance { get; set; }
         public double BasedDamage { get; set; }
         public Inventory Inventory { get; set; }
-
         public Hero(string name, RaceType race, ProffesionType proffesion, double maxHealth)
         {
             Name = name;
@@ -47,38 +45,44 @@ namespace HeroGame
             CurrentMana = MAX_MANA;
             CurrentStamina = MAX_STAMINA;
         }
-        public void InflictDamage(Hero anotherHero)
+        public string InflictDamage(Hero anotherHero)
         {
-            double damage = Inventory.GetDamage() + this.BasedDamage;
+            double damage = Inventory.GetDamage() + BasedDamage;
             damage += Strength + damage;
-            if (this.CurrentStamina <= 0)
+            if (CurrentStamina <= 0)
             {
                 damage /= 2;
             }
             damage -= anotherHero.Inventory.GetDefence();
-            this.CurrentStamina -= 10;
-            if (this.CurrentStamina < 0)
+            CurrentStamina -= 10;
+            if (CurrentStamina < 0)
             {
-                this.CurrentStamina = 0;
+                CurrentStamina = 0;
             }
             anotherHero.DecreaseHealth(damage);
+            return $"\n'{Name}' атаковал '{anotherHero.Name}'\nНанесённый урон: {damage}\nТекущее здоровье у '{anotherHero.Name}': {anotherHero.CurrentHealth}";
         }
-        public void InflictMagicDamage(Hero anotherHero)
+        public string InflictMagicDamage(Hero anotherHero)
         {
-            if (this.Proffesion == ProffesionType.Mage)
+            if (Proffesion == ProffesionType.Mage)
             {
-                double damage = Inventory.GetDamage() + this.BasedDamage;
+                double damage = Inventory.GetDamage() + BasedDamage;
                 damage += Intelligence + damage;
-                if (this.CurrentMana <= 0)
+                if (CurrentMana <= 0)
                 {
                     damage /= 2;
                 }
-                this.CurrentMana -= 10;
-                if (this.CurrentMana < 0)
+                CurrentMana -= 10;
+                if (CurrentMana < 0)
                 {
-                    this.CurrentMana = 0;
+                    CurrentMana = 0;
                 }
                 anotherHero.DecreaseHealth(damage);
+                return $"\n'{Name}' атаковал '{anotherHero.Name}'\nНанесённый урон: {damage}\nТекущее здоровье у '{anotherHero.Name}': {anotherHero.CurrentHealth}";
+            }
+            else
+            {
+                return $"\n'{Name}' не может наносить магический урон.";
             }
         }
         public void DecreaseHealth(double amountHealth)
@@ -104,7 +108,7 @@ namespace HeroGame
                 CurrentHealth = MAX_HEALTH;
             }
         }
-        public void DecreaseStamina (double amountStamina)
+        public void DecreaseStamina(double amountStamina)
         {
             if (CurrentStamina - amountStamina > 0)
             {
@@ -176,7 +180,6 @@ namespace HeroGame
                 Strength += 7;
                 Agility -= 3;
                 Endurance += 15;
-
             }
             else if (race.Equals(RaceType.Orc))
             {
@@ -219,6 +222,4 @@ namespace HeroGame
             }
         }
     }
-
-
 }

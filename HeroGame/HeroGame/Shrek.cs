@@ -8,7 +8,6 @@ namespace HeroGame
     {
         public Shrek() : base("Шрек", RaceType.Orc, ProffesionType.Warrior, 2000)
         {
-            
         }
         public string Print()
         {

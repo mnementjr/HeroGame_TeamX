@@ -8,7 +8,6 @@ namespace HeroGame
     {
         public Gendalf() : base("Гендальф", RaceType.Human, ProffesionType.Mage, 2000)
         {
-           
         }
         public string Print()
         {
