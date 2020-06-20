@@ -1,4 +1,4 @@
-
+[![CodeFactor](https://www.codefactor.io/repository/github/itstep-vrn/herogame_teamx/badge/develop)](https://www.codefactor.io/repository/github/itstep-vrn/herogame_teamx/overview/develop)
 # HeroGame_TeamX
 Учебный репозиторий по игре про героев.
 
