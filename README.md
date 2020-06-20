@@ -1,3 +1,4 @@
+
 # HeroGame_TeamX
 Учебный репозиторий по игре про героев.
 
@@ -38,4 +39,4 @@
 + **string InflictMagicDamage(Hero anotherHero)** - ***Нанести магический урон другому персонажу. Возвращает информацию об ударе*** 
 + **void DecreaseHealth/IncreaseHealth(double amountHealth)** - ***Отнимает/прибавляет здоровье***
 + **void DecreaseStamina/IncreaseStamina(double amountStamina)** - ***Отнимает/рибавляет выносливость***
-+ **void DecreaseMana/IncreaseMana(double amountMana)** - ***Отнимает/прибавляет ману ***
++ **void DecreaseMana/IncreaseMana(double amountMana)** - ***Отнимает/прибавляет ману***
