@@ -1,4 +1,5 @@
-﻿using System;
+using System;
+using static System.Console;
 
 namespace HeroGame
 {
@@ -6,7 +7,12 @@ namespace HeroGame
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Shrek shrek = new Shrek();
+            Elf elf = new Elf();
+            WriteLine(shrek.Print());
+            WriteLine(elf.Print());
+            WriteLine(shrek.InflictDamage(elf));
+
         }
     }
 }
